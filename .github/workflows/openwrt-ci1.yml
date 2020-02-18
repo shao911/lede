@@ -139,47 +139,26 @@ jobs:
           # EOF
 
            # 常用LuCI插件选择:
-           # cat >> .config <<EOF
-           # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
-           # CONFIG_PACKAGE_luci-app-aria2 is not set
-           # CONFIG_PACKAGE_luci-app-baidupcs-web is not set
-           # CONFIG_PACKAGE_luci-app-docker is not set
-           # CONFIG_PACKAGE_luci-app-frpc is not set
-           # CONFIG_PACKAGE_luci-app-kodexplorer is not set
-           # CONFIG_PACKAGE_luci-app-minidlna is not set
-           # CONFIG_PACKAGE_luci-app-openvpn is not set
-           # CONFIG_PACKAGE_luci-app-openvpn-server is not set
-           # CONFIG_PACKAGE_luci-app-qbittorrent is not set
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun is not set
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks is not set
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server is not set
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks is not set
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray is not set
-           # CONFIG_PACKAGE_luci-app-ttyd is not set
-           # CONFIG_PACKAGE_luci-app-v2ray-server is not set
-           # CONFIG_PACKAGE_luci-app-verysync is not set
-           # CONFIG_PACKAGE_luci-app-webadmin is not set
-           # CONFIG_PACKAGE_luci-app-wireguard is not set
-           # CONFIG_PACKAGE_luci-app-wrtbwmon is not set
-           # CONFIG_PACKAGE_luci-app-adbyby-plus=y       
-           # CONFIG_PACKAGE_luci-app-ddns=y
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-           # CONFIG_PACKAGE_luci-app-ttyd=y
-           # CONFIG_PACKAGE_luci-app-flowoffload=y
-           # CONFIG_PACKAGE_luci-app-firewall=y
-           # CONFIG_PACKAGE_luci-app-control-webrestriction=y
-           # CONFIG_PACKAGE_luci-app-webadmin=y
-           # CONFIG_PACKAGE_luci-app-oaf=y
-           # CONFIG_PACKAGE_luci-app-mwan3=y
-           # CONFIG_PACKAGE_luci-app-upnp=y
-           # CONFIG_PACKAGE_luci-app-woln=y
-           # CONFIG_PACKAGE_luci-app-syncdial=y
-           # CONFIG_PACKAGE_luci-app-wrtbwmon=y
-           # EOF
+           cat >> .config <<EOF         
+            CONFIG_PACKAGE_luci-app-adbyby-plus=y       
+            CONFIG_PACKAGE_luci-app-ddns=y
+            CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+            CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+            CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+            CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+            CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+            CONFIG_PACKAGE_luci-app-ttyd=y
+            CONFIG_PACKAGE_luci-app-flowoffload=y
+            CONFIG_PACKAGE_luci-app-firewall=y
+            CONFIG_PACKAGE_luci-app-control-webrestriction=y
+            CONFIG_PACKAGE_luci-app-webadmin=y
+            CONFIG_PACKAGE_luci-app-oaf=y
+            CONFIG_PACKAGE_luci-app-mwan3=y
+            CONFIG_PACKAGE_luci-app-upnp=y
+            CONFIG_PACKAGE_luci-app-woln=y
+            CONFIG_PACKAGE_luci-app-syncdial=y
+            CONFIG_PACKAGE_luci-app-wrtbwmon=y
+            EOF
 
           # LuCI主题:
           # cat >> .config <<EOF
