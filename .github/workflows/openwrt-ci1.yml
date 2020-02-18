@@ -52,6 +52,14 @@ jobs:
           # ln -s /mnt/openwrt/staging_dir ./staging_dir
 
           df -h
+          
+      - name: 加上adguardhome
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+          git clone https://github.com/destan19/OpenAppFilter.git
 
       - name: Update feeds
         run: |
@@ -121,11 +129,11 @@ jobs:
 
           # 多文件系统支持:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_kmod-fs-nfs=y
-          CONFIG_PACKAGE_kmod-fs-nfs-common=y
-          CONFIG_PACKAGE_kmod-fs-nfs-v3=y
-          CONFIG_PACKAGE_kmod-fs-nfs-v4=y
-          CONFIG_PACKAGE_kmod-fs-ntfs=y
+          # CONFIG_PACKAGE_kmod-fs-nfs=y
+          # CONFIG_PACKAGE_kmod-fs-nfs-common=y
+          # CONFIG_PACKAGE_kmod-fs-nfs-v3=y
+          # CONFIG_PACKAGE_kmod-fs-nfs-v4=y
+          # CONFIG_PACKAGE_kmod-fs-ntfs=y
           CONFIG_PACKAGE_kmod-fs-squashfs=y
           EOF
 
@@ -139,7 +147,28 @@ jobs:
           # EOF
 
            # 常用LuCI插件选择:
-          cat >> .config <<EOF         
+          cat >> .config <<EOF
+          CONFIG_PACKAGE_luci-app-adbyby-plus is not set
+          CONFIG_PACKAGE_luci-app-aria2 is not set
+          CONFIG_PACKAGE_luci-app-baidupcs-web is not set
+          CONFIG_PACKAGE_luci-app-docker is not set
+          CONFIG_PACKAGE_luci-app-frpc is not set
+          CONFIG_PACKAGE_luci-app-kodexplorer is not set
+          CONFIG_PACKAGE_luci-app-minidlna is not set
+          CONFIG_PACKAGE_luci-app-openvpn is not set
+          CONFIG_PACKAGE_luci-app-openvpn-server is not set
+          CONFIG_PACKAGE_luci-app-qbittorrent is not set
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun is not set
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks is not set
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server is not set
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks is not set
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray is not set
+          CONFIG_PACKAGE_luci-app-ttyd is not set
+          CONFIG_PACKAGE_luci-app-v2ray-server is not set
+          CONFIG_PACKAGE_luci-app-verysync is not set
+          CONFIG_PACKAGE_luci-app-webadmin is not set
+          CONFIG_PACKAGE_luci-app-wireguard is not set
+          CONFIG_PACKAGE_luci-app-wrtbwmon is not set        
           CONFIG_PACKAGE_luci-app-adbyby-plus=y       
           CONFIG_PACKAGE_luci-app-ddns=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
@@ -162,8 +191,9 @@ jobs:
 
           # LuCI主题:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-netgear=y
+          # CONFIG_PACKAGE_luci-theme-argon=y
+          CONFIG_PACKAGE_luci-theme-atmaterial=y
+          # CONFIG_PACKAGE_luci-theme-netgear=y
           EOF
 
           # 常用软件包:
